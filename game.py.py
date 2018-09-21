@@ -18,7 +18,7 @@ while True:
         print("You can travel (E)ast or (W)est")
     if (x==3 and y==1):
         print("Victory!")
-        exit                         
+                                 
     if (x==3 and y==2):
         print("You can travel (N)orth or (S)outh")
     if (x==3 and y==3):
@@ -32,35 +32,51 @@ while True:
     #Skigreini skilyrði ef input er (N)orth
 
     if direction == "n":
-        if y < 3:
+        if (x==2 and y==2) or (x==1 and y==3) or (x==2 and y==3) or (x==3 and y==3): #Skilgreint hvað má ekki velja
+            print("Not a valid direction!")
+        
+        elif y < 3:
             y+=1
             print(x,y)
-            # print("You can travel")
+        else:
+            print("Not a valid direction!")
 
 
     # Skilgreini skilyrði ef input er (S)outh
 
     if direction == "s":
-        if y > 1:
+        if (x==1 and y==1) or (x==2 and y==1) or (x==2 and y==3): #Skilgreint hvað má ekki velja
+            print("Not a valid direction!")
+        
+        elif y > 1:
             y-=1
             print(x,y)
-            # print("You can travel")
+        else:
+            print("Not a valid direction!")
 
     # Skilgreini skilyrði ef input er (E)ast
 
     if direction == "e":
-        if x < 3:
+        if (x==1 and y==1) or (x==2 and y==1) or (x==3 and y==3) or (x==3 and y==2): #Skilgreint hvað má ekki velja
+            print("Not a valid direction!")
+        
+        elif x < 3:
             x+=1
             print(x,y)
-            # print("You can travel")
+        else:
+            print("Not a valid direction!")
 
     # skilgreini skilyrði ef unput er (W)est
 
     if direction == "w":
-        if x > 1:
+        if (x==1 and y==1) or (x==1 and y==2) or (x==1 and y==3) or (x==2 and y==1) or (x==3 and y==2): #Skilgreint hvað má ekki velja
+            print("Not a valid direction!")
+        
+        elif x > 1:
             x-=1
             print(x,y)
-            # print("You can travel")
+        else:
+            print("Not a valid direction!")
 
 
 
