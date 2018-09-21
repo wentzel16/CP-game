@@ -16,7 +16,7 @@ while True:
         if (x==2 and y == 1):
             print("You can travel: (N)orth.")
         if (x==2 and y==2):
-            print("You can travel: (W)est or (S)outh.")     
+            print("You can travel: (S)outh or (W)est.")     
         if (x==2 and y==3):
             print("You can travel: (E)ast or (W)est.")
         if (x==3 and y==1):
@@ -25,7 +25,7 @@ while True:
         if (x==3 and y==2):
             print("You can travel: (N)orth or (S)outh.")
         if (x==3 and y==3):
-            print("You can travel: (W)est or (S)outh.")          
+            print("You can travel: (S)outh or (W)est.")          
 
 
 
