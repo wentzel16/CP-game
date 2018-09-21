@@ -5,29 +5,29 @@ y = 1
 
 while True:
     if (x==1 and y==1):
-         print("You can travel (N)orth:")                      #þarf að reyna að losa mig við að þetta prenti alltaf. Á bara að prentast í byrjun
+         print("You can travel: (N)orth.")                      #þarf að reyna að losa mig við að þetta prenti alltaf. Á bara að prentast í byrjun
     if (x==1 and y==2):
-         print("You can travel (N)orth or (E)ast or (S)outh")     
+         print("You can travel: (N)orth or (E)ast or (S)outh.")     
     if (x==1 and y==3):
-        print("You can travel (E)ast or (S)outh")
+        print("You can travel: (E)ast or (S)outh.")
     if (x==2 and y == 1):
-        print("You can travel (N)orth")
+        print("You can travel: (N)orth.")
     if (x==2 and y==2):
-        print("You can travel (W)est or (S)outh")     
+        print("You can travel: (W)est or (S)outh.")     
     if (x==2 and y==3):
-        print("You can travel (E)ast or (W)est")
+        print("You can travel: (E)ast or (W)est.")
     if (x==3 and y==1):
-        print("Victory!")
-                                 
+        print("Victory! ") #Þarf að finna út hvernig forritið getur hætt keyrslu eftir þessa prentun
+        exit()                
     if (x==3 and y==2):
-        print("You can travel (N)orth or (S)outh")
+        print("You can travel: (N)orth or (S)outh.")
     if (x==3 and y==3):
-        print("You can travel (W)est or (S)outh")          
+        print("You can travel: (W)est or (S)outh.")          
 
 
 
 
-    direction = (input("Direction: "))
+    direction = (input("Direction: ")).lower()
 
     #Skigreini skilyrði ef input er (N)orth
 
@@ -37,7 +37,7 @@ while True:
         
         elif y < 3:
             y+=1
-            print(x,y)
+            # print(x,y)
         else:
             print("Not a valid direction!")
 
@@ -50,19 +50,19 @@ while True:
         
         elif y > 1:
             y-=1
-            print(x,y)
+            # print(x,y)
         else:
             print("Not a valid direction!")
 
     # Skilgreini skilyrði ef input er (E)ast
 
     if direction == "e":
-        if (x==1 and y==1) or (x==2 and y==1) or (x==3 and y==3) or (x==3 and y==2): #Skilgreint hvað má ekki velja
+        if (x==1 and y==1) or (x==2 and y==1) or (x==2 and y==2) or (x==3 and y==3) or (x==3 and y==2): #Skilgreint hvað má ekki velja
             print("Not a valid direction!")
         
         elif x < 3:
             x+=1
-            print(x,y)
+            # print(x,y)
         else:
             print("Not a valid direction!")
 
@@ -74,7 +74,7 @@ while True:
         
         elif x > 1:
             x-=1
-            print(x,y)
+            # print(x,y)
         else:
             print("Not a valid direction!")
 
