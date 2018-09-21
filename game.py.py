@@ -86,7 +86,7 @@ while True:
             # print(x,y)
         else:
             print("Not a valid direction!")
-            printDirection=False
+            printDirection=False 
 
 
 
