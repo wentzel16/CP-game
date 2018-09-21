@@ -7,7 +7,17 @@
 
 # https://github.com/wentzel16/CP-game.git
 
+#1. Það sem ég var að gera í fyrri kóðanum þekki ég betur og fannst þægilegra að vinna með það.
+# Föllin gera þó kóðann þægilegri í lesningu þegar skilningur á föllum er til staðar.
 
+#2. Síðari kóðinn er læsilegri því þar er hægt að skoða hvaða föll er kallað á
+# og ef frekari upplýsinga er nauðsyn úr skilgreindu falli er hægt að finna það þar sem fallið er búið til
+
+#3. Náði að stytta endurtekin prentkóða með því að skilgreina fallið PrintError
+
+def printError():
+    print("Not a valid direction!")
+    return False
 
 def printinstructions(x,y,printDirection): #Bý til fall fyrir prentunina fyrir hvern reit
 
@@ -35,68 +45,60 @@ def printinstructions(x,y,printDirection): #Bý til fall fyrir prentunina fyrir 
 
 def n(x,y,printDirection): #Bý til fall fyrir norður
     if (x==2 and y==2) or (x==1 and y==3) or (x==2 and y==3) or (x==3 and y==3): #Skilgreint hvað má ekki velja
-        print("Not a valid direction!")
-        printDirection=False
-    
+        printDirection=printError()
     elif y < 3:
         printDirection=True
         y+=1
         # print(x,y)
     else:
-        print("Not a valid direction!")
-        printDirection=False
+        printDirection=printError()
+    
     return x,y,printDirection
 
 def s(x,y,printDirection): #Bý til fall fyrir suður
     if (x==1 and y==1) or (x==2 and y==1) or (x==2 and y==3): #Skilgreint hvað má ekki velja
-        print("Not a valid direction!")
-        printDirection=False
+        printDirection=printError()
     elif y > 1:
         printDirection=True            
         y-=1
         # print(x,y)
     else:
-        print("Not a valid direction!")
-        printDirection=False
+        printDirection=printError()
     return x,y,printDirection
     
 def e(x,y,printDirection): #Bý til fall fyrir austur
     if (x==1 and y==1) or (x==2 and y==1) or (x==2 and y==2) or (x==3 and y==3) or (x==3 and y==2): #Skilgreint hvað má ekki velja
-        print("Not a valid direction!")
-        printDirection=False
+        printDirection=printError()
     elif x < 3:
         printDirection=True
         x+=1
         # print(x,y)
     else:
-        print("Not a valid direction!")
-        printDirection=False
+        printDirection=printError()
     return x,y,printDirection
     
 def w(x,y,printDirection): #Bý til fall fyrir vestur
     if (x==1 and y==1) or (x==1 and y==2) or (x==1 and y==3) or (x==2 and y==1) or (x==3 and y==2): #Skilgreint hvað má ekki velja
-        print("Not a valid direction!")
-        printDirection=False
+        printDirection=printError()
     elif x > 1:
         printDirection=True
         x-=1
         # print(x,y)
     else:
-        print("Not a valid direction!")
-        printDirection=False
+        printDirection=printError()
     return x,y,printDirection
 
+#skilgreini hér upphafsbreytur
 x = 1
 y = 1
 printDirection=True 
+
 while True:
     
     printinstructions(x,y,printDirection)
     direction = (input("Direction: ")).lower()
     
-
-
-    #Skigreini skilyrði ef input er (N)orth
+    #Skigreini skilyrði ef input er (N)orth 
     if direction == "n":
         x, y, printDirection = n(x,y,printDirection)
     # Skilgreini skilyrði ef input er (S)outh
@@ -108,15 +110,3 @@ while True:
     # skilgreini skilyrði ef unput er (W)est
     if direction == "w":
         x, y, printDirection = w(x,y,printDirection) 
-
-
-
-
-
-
-
-
-
-
-
-
